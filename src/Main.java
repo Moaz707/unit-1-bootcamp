@@ -1,7 +1,11 @@
 
 
+import com.sun.deploy.util.StringUtils;
+
 import java.util.*;
 import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * // <<<for me for testing some code....not include in the Homework>>
@@ -43,5 +47,21 @@ public class Main {
 //            }
 //        }
 //        return list;
+
+
+        //find words inside text
+        String text = "I will come and meet you at the woods) 123woods and all the woods.";
+        List <String> tokens = new ArrayList <String>();
+        tokens.add("123woods");
+        tokens.add("woods");
+
+        String patternString = "\\b(" + StringUtils.join(tokens, "|") + ")\\b";
+        Pattern pattern = Pattern.compile(patternString);
+        Matcher matcher = pattern.matcher(text);
+
+        while (matcher.find()) {
+            System.out.println(matcher.group(1));
+        }
+
     }
 }

@@ -1,10 +1,14 @@
+import com.sun.deploy.util.StringUtils;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.HashSet;
 import java.util.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
- * Created by alexandraqin on 4/14/15.
+ * Created by Muaadh Melhi .
  */
 public class UsingAPIs {
     private static Set <String> setATaleOfTwoCities, setMobyDick;
@@ -17,7 +21,6 @@ public class UsingAPIs {
         countUniqueWordsMobyDick(taleFile[1]);
         intersectionBetweenBothBooks(setATaleOfTwoCities, setMobyDick);
         unionBetweenBothBooks(setATaleOfTwoCities, setMobyDick);
-
     }
 
 
@@ -43,7 +46,6 @@ public class UsingAPIs {
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
-
         System.out.println("The unique words in A Tale of Two Cities are " + setATaleOfTwoCities.size() + " words.");
     }
 
@@ -64,7 +66,6 @@ public class UsingAPIs {
         }
 
         System.out.println("The unique words in Moby Dick are " + setMobyDick.size() + " words.");
-
     }
 
     private static void intersectionBetweenBothBooks(Set <String> setATaleOfTwoCities, Set <String> setMobyDick) {
@@ -84,7 +85,5 @@ public class UsingAPIs {
             System.out.println(itr.next());
 
         }
-
     }
-
 }
